@@ -13,7 +13,7 @@
     'views/alquiler_producto_views.xml',
     'security/ir.model.access.csv',
     ],
-    'icon': '/alquiler_producto/static/description/icon55.png',
+    'icon': '/alquiler_producto/static/description/icon56.png',
     'installable': True,
     'application': True,
 }
