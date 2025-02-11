@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <!-- Definir la vista de formulario para el modelo alquiler.producto -->
+        <record id="view_alquiler_producto_form" model="ir.ui.view">
+            <field name="name">alquiler.producto.form</field>
+            <field name="model">alquiler.producto</field>
+            <field name="arch" type="xml">
+                <form string="Alquiler de Producto">
+                    <sheet>
+                        <group>
+                            <field name="customer_id"/>
+                            <field name="product_id"/>
+                            <field name="start_date"/>
+                            <field name="end_date" readonly="1"/>
+                            <field name="status" readonly="1"/>
+                            <field name="notes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Definir la vista de lista para el modelo alquiler.producto -->
+        <record id="view_alquiler_producto_tree" model="ir.ui.view">
+            <field name="name">alquiler.producto.tree</field>
+            <field name="model">alquiler.producto</field>
+            <field name="arch" type="xml">
+                <tree string="Alquiler de Productos">
+                    <field name="customer_id"/>
+                    <field name="product_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Definir la vista de búsqueda para el modelo alquiler.producto -->
+        <record id="view_alquiler_producto_search" model="ir.ui.view">
+            <field name="name">alquiler.producto.search</field>
+            <field name="model">alquiler.producto</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Alquiler de Productos">
+                    <field name="customer_id"/>
+                    <field name="product_id"/>
+                    <field name="start_date"/>
+                    <field name="status"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Acción para abrir la vista de lista de alquiler.producto -->
+        <record id="action_alquiler_producto" model="ir.actions.act_window">
+            <field name="name">Alquiler de Productos</field>
+            <field name="res_model">alquiler.producto</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menú para acceder al modelo alquiler.producto -->
+        <menuitem id="menu_alquiler_producto_root" name="Alquiler de Productos" sequence="10"/>
+        <menuitem id="menu_alquiler_producto" name="Gestionar Alquileres" parent="menu_alquiler_producto_root" action="action_alquiler_producto" sequence="10"/>
+    </data>
+</odoo>
